@@ -1,0 +1,14 @@
+<div class="container">
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<%= link_to  "Add review", new_restaurant_review_path(@restaurant), class:"btn btn-dark" %>
+<div><br/>
+<% @restaurant.reviews.each do |review|%>
+<h1 style="display:inline;"><%= review.content %></h1>
+<% (review.rating).times do%>
+<i class="fas fa-star"></i>
+<%end%>
+<br/><br/>
+<% end %>
+</div>
+</div>
